@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+  />
+    <title>Contact Us</title>
+      <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+    
+</head>
+<body>
+
+<section class="bg-black text-white font-sans overflow-x-hidden overflow-y-auto min-h-screen">
+<section class="px-6 pt-6 pb-28 bg-transparent relative z-10">
+  <style>
+    @keyframes gradient-border {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    @keyframes gradient-text {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    .gradient-border {
+      position: relative;
+      border-radius: 1.5rem;
+      padding: 5rem;
+      background: transparent;
+    }
+
+    .gradient-border::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      border-radius: inherit;
+      padding: 2.5px;
+      background: linear-gradient(270deg, #f43f5e, #a855f7, #3b82f6, #f43f5e);
+      background-size: 600% 600%;
+      animation: gradient-border 6s ease infinite;
+      -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      -webkit-mask-composite: destination-out;
+      mask-composite: exclude;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .gradient-border > form {
+      position: relative;
+      background: transparent;
+      border-radius: 1.3rem;
+      z-index: 1;
+    }
+
+    .get-in-touch {
+      font-size: 3.5rem;
+      font-weight: 900;
+      background: linear-gradient(270deg, #f43f5e, #a855f7, #3b82f6, #f43f5e);
+      background-size: 600% 600%;
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: gradient-text 8s ease infinite;
+      text-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+      margin-bottom: 0.25rem;
+      -webkit-user-select: none;
+      user-select: none;
+    }
+  </style>
+
+  <div class="max-w-3xl mx-auto text-center">
+    <h3 class="get-in-touch">Get in Touch</h3>
+    <h2 class="text-5xl sm:text-6xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-fuchsia-500 via-pink-500 to-red-500 drop-shadow-md mb-6">
+      Keep in Touch
+    </h2>
+
+    <p class="text-gray-600 dark:text-gray-300 text-lg mb-12">
+      Got a project, question, or just want to connect? Fill out the form below – I’d love to hear from you!
+    </p>
+
+    <div class="gradient-border">
+      <form action="contact.php" method="POST">
+        <div class="grid sm:grid-cols-2 gap-8">
+          <div class="relative">
+            <input
+              type="text"
+              id="name"
+              name="name"
+              placeholder=" "
+              required
+              class="peer w-full px-4 py-3 bg-transparent border-b-2 border-gray-400 dark:border-gray-600 text-white placeholder-transparent focus:outline-none focus:border-pink-500 transition"
+            />
+            <label for="name" class="absolute left-4 top-3 text-gray-400 text-sm transition-all peer-placeholder-shown:top-3.5 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-500 peer-focus:top-1 peer-focus:text-sm peer-focus:text-pink-400">
+              Your Name
+            </label>
+          </div>
+          <div class="relative">
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder=" "
+              required
+              class="peer w-full px-4 py-3 bg-transparent border-b-2 border-gray-400 dark:border-gray-600 text-white placeholder-transparent focus:outline-none focus:border-purple-500 transition"
+            />
+            <label for="email" class="absolute left-4 top-3 text-gray-400 text-sm transition-all peer-placeholder-shown:top-3.5 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-500 peer-focus:top-1 peer-focus:text-sm peer-focus:text-purple-400">
+              Email Address
+            </label>
+          </div>
+        </div>
+        <div class="relative mt-8">
+          <textarea
+            id="message"
+            name="message"
+            rows="5"
+            placeholder=" "
+            required
+            class="peer w-full px-4 py-3 bg-transparent border-b-2 border-gray-400 dark:border-gray-600 text-white placeholder-transparent focus:outline-none focus:border-indigo-500 transition resize-none"
+          ></textarea>
+          <label for="message" class="absolute left-4 top-3 text-gray-400 text-sm transition-all peer-placeholder-shown:top-4 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-500 peer-focus:top-1 peer-focus:text-sm peer-focus:text-indigo-400">
+            Your Message
+          </label>
+        </div>
+        <div class="flex justify-end mt-6">
+          <button
+            type="submit"
+            class="px-8 py-3 bg-gradient-to-r from-pink-500 to-purple-600 text-white font-semibold text-lg rounded-full shadow-lg hover:shadow-pink-400/40 hover:scale-105 transition-all duration-300"
+          >
+            🚀 Send Message
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+
+
+
+</section>
+
+</body>
+</html>

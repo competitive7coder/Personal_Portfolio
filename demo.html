@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Skills & Tools - Simple Zoom Hover</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+  />
+  <style>
+    body {
+      background: #000;
+      color: white;
+      font-family: 'Inter', sans-serif;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      margin: 0; padding: 0;
+    }
+    h2 {
+      font-weight: 900;
+      font-size: 2.75rem;
+      margin-bottom: 2rem; /* spacing below heading */
+      text-align: center;
+      background: linear-gradient(90deg, #14b8a6, #22d3ee, #3b82f6);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      -webkit-user-select: none;
+      -webkit-user-select: none;
+      -webkit-user-select: none;
+      -webkit-user-select: none;
+      -webkit-user-select: none;
+      -webkit-user-select: none;
+      -webkit-user-select: none;
+      user-select: none;
+      position: relative;
+    }
+    h2::after {
+      content: "";
+      width: 120px;
+      height: 4px;
+      background: linear-gradient(90deg, #14b8a6, #22d3ee, #3b82f6);
+      display: block;
+      margin: 12px auto 0;
+      border-radius: 10px;
+      box-shadow: 0 0 12px #22d3ee;
+    }
+
+    section {
+      margin-bottom: 5rem; /* enough space after each section */
+      padding-top: 3rem;   /* spacing above section */
+    }
+
+    .icon-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+      gap: 2rem;
+      max-width: 720px;
+      margin: 0 auto;
+      justify-items: center;
+      perspective: 800px;
+    }
+
+    .icon-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+      cursor: default;
+      -webkit-user-select: none;
+      user-select: none;
+    }
+
+    .icon {
+      font-size: 3.8rem;
+      transition: transform 0.3s ease;
+      border-radius: 12px;
+      will-change: transform;
+      color: inherit;
+      filter: none; /* remove shadows */
+      box-shadow: none;
+      animation: floatUpDown 6s ease-in-out infinite;
+    }
+    .icon:hover {
+      transform: scale(1.15);
+      animation-play-state: paused;
+      filter: none;  /* no glow or drop shadows */
+      box-shadow: none;
+    }
+
+    .icon-label {
+      font-size: 0.875rem;
+      color: #ccc;
+      text-align: center;
+      -webkit-user-select: none;
+      user-select: none;
+      white-space: nowrap;
+      max-width: 100%;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    /* Animations */
+    @keyframes floatUpDown {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-6px);
+      }
+    }
+
+    /* Brand colors */
+    .fa-html5 { color: #e34f26; }
+    .fa-css3-alt { color: #1572b6; }
+    .fa-js { color: #f7df1e; filter: drop-shadow(0 0 3px #f7df1e); }
+    .fa-react { color: #61dafb; }
+    .fa-python { color: #306998; }
+    .fa-java { color: #007396; }
+
+    .fa-git-alt { color: #f05032; }
+    .fa-github { color: #fff; filter: drop-shadow(0 0 5px #fff); }
+    .fa-figma { color: #f24e1e; }
+    .fa-npm { color: #cb3837; }
+    .fa-database { color: #4db33d; }
+    .fa-fire { color: #ff6a00; }
+  </style>
+</head>
+<body>
+
+  <section>
+    <h2>Skills</h2>
+    <div class="icon-grid" id="skills">
+      <div class="icon-item" title="HTML5">
+        <i class="fa-brands fa-html5 icon"></i>
+        <span class="icon-label">HTML5</span>
+      </div>
+      <div class="icon-item" title="CSS3">
+        <i class="fa-brands fa-css3-alt icon"></i>
+        <span class="icon-label">CSS3</span>
+      </div>
+      <div class="icon-item" title="JavaScript">
+        <i class="fa-brands fa-js icon"></i>
+        <span class="icon-label">JavaScript</span>
+      </div>
+      <div class="icon-item" title="React">
+        <i class="fa-brands fa-react icon"></i>
+        <span class="icon-label">React</span>
+      </div>
+      <div class="icon-item" title="Python">
+        <i class="fa-brands fa-python icon"></i>
+        <span class="icon-label">Python</span>
+      </div>
+      <div class="icon-item" title="Java">
+        <i class="fa-brands fa-java icon"></i>
+        <span class="icon-label">Java</span>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Tools</h2>
+    <div class="icon-grid" id="tools">
+      <div class="icon-item" title="Git">
+        <i class="fa-brands fa-git-alt icon"></i>
+        <span class="icon-label">Git</span>
+      </div>
+      <div class="icon-item" title="GitHub">
+        <i class="fa-brands fa-github icon"></i>
+        <span class="icon-label">GitHub</span>
+      </div>
+      <div class="icon-item" title="Figma">
+        <i class="fa-brands fa-figma icon"></i>
+        <span class="icon-label">Figma</span>
+      </div>
+      <div class="icon-item" title="npm">
+        <i class="fa-brands fa-npm icon"></i>
+        <span class="icon-label">npm</span>
+      </div>
+      <div class="icon-item" title="Database">
+        <i class="fa-solid fa-database icon"></i>
+        <span class="icon-label">Database</span>
+      </div>
+      <div class="icon-item" title="Firebase">
+        <i class="fa-solid fa-fire icon"></i>
+        <span class="icon-label">Firebase</span>
+      </div>
+    </div>
+  </section>
+
+</body>
+</html>
+<script>
+  // Add hover effect to all icons
+  document.querySelectorAll('.icon').forEach(icon => {
+    icon.addEventListener('mouseover', () => {
+      icon.style.transform = 'scale(1.15)';
+    });
+    icon.addEventListener('mouseout', () => {
+      icon.style.transform = 'scale(1)';
+    });
+  });
+</script>
